@@ -74,20 +74,11 @@ class AgentSkill(BaseModel):
 # This information can be shared with a directory service or other agents
 # to describe what the agent does, where to reach it, and what capabilities it supports.
 class AgentCard(BaseModel):
-    # Human-readable name of the agent (e.g., "Time Teller")
-    name: str
-
-    # Description of the agent's purpose or use case
-    description: str
-
-    # URL where the agent is hosted (can be used to send requests to it)
-    url: str
-
-    # Semantic version of the agent (e.g., "1.0.0")
-    version: str
-
-    # The capabilities this agent supports (uses the AgentCapabilities model above)
-    capabilities: AgentCapabilities
+    name: str           # Human-readable name of the agent (e.g., "Time Teller")
+    description: str    # Description of the agent's purpose or use case
+    url: str            # URL where the agent is hosted (can be used to send requests to it)
+    version: str        # Semantic version of the agent (e.g., "1.0.0")
+    capabilities: AgentCapabilities    # The capabilities this agent supports (uses the AgentCapabilities model above)
 
     # List of skills (as strings) this agent can perform
     # These are references to the full AgentSkill definitions, which might be fetched elsewhere

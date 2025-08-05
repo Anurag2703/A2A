@@ -14,7 +14,7 @@ from google.adk.sessions import InMemorySessionService
 from google.adk.memory.in_memory_memory_service import InMemoryMemoryService
 from google.adk.artifacts import InMemoryArtifactService
 
-# 🏃 The "Runner" connects the agent, session, memory, and files into a complete system
+# The "Runner" connects the agent, session, memory, and files into a complete system
 from google.adk.runners import Runner
 
 #  Gemini-compatible types for formatting input/output messages

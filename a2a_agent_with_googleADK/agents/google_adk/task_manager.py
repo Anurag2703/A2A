@@ -10,6 +10,8 @@
 # 1. Imports
 # -------------------------------------------------
 
+from datetime import datetime
+
 # Standard Python module for logging debug/info messages
 import logging
 
@@ -92,7 +94,8 @@ class AgentTaskManager(InMemoryTaskManager):
         query = self._get_user_query(request)
 
         # Step 3: Ask the Gemini agent to respond (synchronous call here)
-        result_text = await self.agent.invoke(query, request.params.sessionId)
+        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        result_text = f"The current time is: {current_time}"
 
         # Step 4: Turn the agent's response into a Message object
         agent_message = Message(

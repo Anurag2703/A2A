@@ -30,25 +30,25 @@ from models.task import Task
 # -----------------------------------------------------------------------------
 @click.command()
 @click.option("--agent", default="http://localhost:10002", help="Base URL of the A2A agent server")
-# ^ This defines the --agent option. It's a string with a default of localhost:10002
-# ^ Used to point to the running agent server (adjust if server runs elsewhere)
+# This defines the --agent option. It's a string with a default of localhost:10002
+# Used to point to the running agent server (adjust if server runs elsewhere)
 
 @click.option("--session", default=0, help="Session ID (use 0 to generate a new one)")
-# ^ This defines the --session option. A session groups multiple tasks together.
-# ^ If user passes 0, we generate a random session ID using uuid4.
+# This defines the --session option. A session groups multiple tasks together.
+# If user passes 0, we generate a random session ID using uuid4.
 
 @click.option("--history", is_flag=True, help="Print full task history after receiving a response")
-# ^ This defines a --history flag (boolean). If passed, full conversation history is shown.
+# This defines a --history flag (boolean). If passed, full conversation history is shown.
 
 async def cli(agent: str, session: str, history: bool):
     # sourcery skip: remove-unnecessary-cast
     """
-    CLI to send user messages to an A2A agent and display the response.
+        CLI to send user messages to an A2A agent and display the response.
 
-    Args:
-        agent (str): The base URL of the A2A agent server (e.g., http://localhost:10002)
-        session (str): Either a string session ID or 0 to generate one
-        history (bool): If true, prints the full task history
+        Args:
+            agent (str): The base URL of the A2A agent server (e.g., http://localhost:10002)
+            session (str): Either a string session ID or 0 to generate one
+            history (bool): If true, prints the full task history
     """
 
     # Initialize the client by providing the full POST endpoint for sending tasks
