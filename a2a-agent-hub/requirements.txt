@@ -10,3 +10,7 @@ psycopg2-binary  # If using PostgreSQL
 PyMuPDF
 pdfminer.six
 aiofiles
+pytesseract
+pillow
+pdf2image
+python-docx

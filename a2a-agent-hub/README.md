@@ -13,13 +13,5 @@
 5. Verify ADK:
     pip show google-adk
 
-
-
-
-(IN SEPARATE TERMINALS)
-
-1.  To start the agent:
-        python -m agents.google_adk
-
-2.  To start the client:
-        python -m app.cmd.cmd --agent http://localhost:10002
+6. Start the backend server:
+    uvicorn backend.api.main:app --reload
