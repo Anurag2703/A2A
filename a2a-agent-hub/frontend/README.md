@@ -29,3 +29,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## 5. Run the react-vite server
     npm run dev
+
+## 6. Some new packages to install
+    npm install jspdf jspdf-autotable

@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AUI Protocol",
+  "type": "object",
+  "required": ["version", "status", "agent", "metadata", "content"],
+  "additionalProperties": true,
+  "properties": {
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+$" },
+    "status": { "type": "string", "enum": ["success", "error", "partial"] },
+    "agent": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "document_type": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "processing_time_ms": { "type": ["number", "null"] },
+        "tokens_used": { "type": ["number", "null"] },
+        "model": { "type": ["string", "null"] },
+        "timestamp": { "type": ["string", "null"] },
+        "error": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "content": {
+      "type": "object",
+      "required": ["type", "data"],
+      "properties": {
+        "type": { "type": "string" },
+        "title": { "type": ["string", "null"] },
+        "summary_text": { "type": ["string", "null"] },
+        "data": {}
+      },
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "raw_text": { "type": ["string", "null"] }
+  }
+}

@@ -1,0 +1,56 @@
+/* Container with scroll if data is too long */
+.ur-table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  background: #1e1e1e;
+  padding: 0.5rem;
+}
+
+/* Modern table style */
+.ur-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.ur-key {
+  font-weight: bold;
+  background-color: #2d2d2d;
+  color: #ffd700;
+  padding: 0.5rem;
+  width: 30%;
+  vertical-align: top;
+}
+
+.ur-value {
+  padding: 0.5rem;
+  background-color: #262626;
+  color: #f5f5f5;
+}
+
+/* String & primitive text styling */
+.ur-text {
+  color: #f5f5f5;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* List styling */
+.ur-list {
+  margin: 0.3rem 0 0.3rem 1.2rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.ur-list li {
+  color: #e0e0e0;
+}
+
+/* Highlight numeric/important values */
+.ur-value:has(p),
+.ur-value:has(span) {
+  color: #9cdcfe;
+}
